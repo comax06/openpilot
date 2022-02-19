@@ -17,7 +17,7 @@ def get_startup_event(car_recognized, controller_available, fw_seen):
   if is_comma_remote() and is_tested_branch():
     event = EventName.startup
   else:
-    event = EventName.startupMaster
+    event = EventName.startup
 
   if not car_recognized:
     if fw_seen:
@@ -171,7 +171,7 @@ def get_car(logcan, sendcan):
 
   if candidate is None:
     cloudlog.warning("car doesn't match any fingerprints: %r", fingerprints)
-    candidate = "mock"
+    candidate = "SKODA OCTAVIA 3RD GEN"
 
   CarInterface, CarController, CarState = interfaces[candidate]
   car_params = CarInterface.get_params(candidate, fingerprints, car_fw)
