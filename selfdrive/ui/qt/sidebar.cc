@@ -63,12 +63,12 @@ void Sidebar::updateState(const UIState &s) {
   }
   setProperty("connectStatus", QVariant::fromValue(connectStatus));
 
-  ItemStatus tempStatus = {"TEMP\nHIGH", danger_color};
+  ItemStatus tempStatus = {"温度\n很高", danger_color};
   auto ts = deviceState.getThermalStatus();
   if (ts == cereal::DeviceState::ThermalStatus::GREEN) {
-    tempStatus = {"TEMP\nGOOD", good_color};
+    tempStatus = {"温度\n很好", good_color};
   } else if (ts == cereal::DeviceState::ThermalStatus::YELLOW) {
-    tempStatus = {"TEMP\nOK", warning_color};
+    tempStatus = {"温度\n还行", warning_color};
   }
   setProperty("tempStatus", QVariant::fromValue(tempStatus));
 
@@ -111,5 +111,5 @@ void Sidebar::paintEvent(QPaintEvent *event) {
   // metrics
   drawMetric(p, temp_status.first, temp_status.second, 338);
   drawMetric(p, panda_status.first, panda_status.second, 496);
-  drawMetric(p, connect_status.first, connect_status.second, 654);
+  //drawMetric(p, connect_status.first, connect_status.second, 654);
 }
