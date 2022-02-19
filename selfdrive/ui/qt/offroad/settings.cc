@@ -381,10 +381,10 @@ SettingsWindow::SettingsWindow(QWidget *parent) : QFrame(parent) {
   QObject::connect(device, &DevicePanel::showDriverView, this, &SettingsWindow::showDriverView);
 
   QList<QPair<QString, QWidget *>> panels = {
-    {"Device", device},
-    {"Network", network_panel(this)},
-    {"Toggles", new TogglesPanel(this)},
-    {"Software", new SoftwarePanel(this)},
+    {"设备", device},
+    {"网络", network_panel(this)},
+    {"开关", new TogglesPanel(this)},
+    {"软件", new SoftwarePanel(this)},
   };
 
 #ifdef ENABLE_MAPS
