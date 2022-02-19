@@ -81,7 +81,7 @@ def manager_init() -> None:
   # set dongle id
   reg_res = register(show_spinner=True)
   if reg_res:
-    dongle_id = reg_res
+    dongle_id = "000000"#reg_res
   else:
     serial = params.get("HardwareSerial")
     raise Exception(f"Registration failed for device {serial}")
